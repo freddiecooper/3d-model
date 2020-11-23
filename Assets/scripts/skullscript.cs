@@ -20,11 +20,11 @@ public class skullscript : MonoBehaviour
         
         if(Input.GetKey("a"))
         {
-            Velocity.x=8;
+            Velocity.x=13;
         }
         else if(Input.GetKey("d"))
         {
-            Velocity.x=-8;
+            Velocity.x=-13;
         }
         else
         {
@@ -33,11 +33,11 @@ public class skullscript : MonoBehaviour
 
         if(Input.GetKey("w"))
         {
-            Velocity.z=-8;
+            Velocity.z=-13;
         }
         else if(Input.GetKey("s"))
         {
-            Velocity.z=8;
+            Velocity.z=13;
         }
         else
         {
@@ -48,7 +48,7 @@ public class skullscript : MonoBehaviour
         {
             if(Input.GetKey("space"))
             {
-                Velocity.y = 8;
+                Velocity.y = 13;
             }
         }
 
