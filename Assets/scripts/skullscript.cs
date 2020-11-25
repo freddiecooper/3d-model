@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class skullscript : MonoBehaviour
 {
@@ -55,5 +56,12 @@ public class skullscript : MonoBehaviour
 
         
         rb.velocity = Velocity;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("big ball"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
     }
 }
