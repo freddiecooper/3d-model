@@ -21,34 +21,38 @@ public class robotmove : MonoBehaviour
         
         if(Input.GetKey("left"))
         {
-            Velocity.x=13;
+            Velocity.x=5;
             anim.SetBool("walk", true);
-            transfrom.rotation = Quternion.Euler(0,270,0);
+            anim.SetBool("idle", false);
+            transform.rotation = Quaternion.Euler(0,90,0);
         }
         else if(Input.GetKey("right"))
         {
-            Velocity.x=-13;
+            Velocity.x=-5;
             anim.SetBool("walk", true);
-            transfrom.rotation = Quternion.Euler(0,90,0);
+            anim.SetBool("idle", false);
+            transform.rotation = Quaternion.Euler(0,270,0);
         }
         else if(Input.GetKey("up"))
         {
-            Velocity.z=-13;
+            Velocity.z=-5;
             anim.SetBool("walk", true);
-            transfrom.rotation = Quternion.Euler(0,180,0);
+            anim.SetBool("idle", false);
+            transform.rotation = Quaternion.Euler(0,180,0);
         }
         else if(Input.GetKey("down"))
         {
-            Velocity.z=13;
+            Velocity.z=5;
             anim.SetBool("walk", true);
-            transfrom.rotation = Quternion.Euler(0,0,0);
+            anim.SetBool("idle", false);
+            transform.rotation = Quaternion.Euler(0,0,0);
         }
         else
         {
             Velocity.x=0;
             Velocity.z=0;
             anim.SetBool("walk", false);
-            anim.SetBool("idle", false);
+            anim.SetBool("idle", true);
         }
 
         
