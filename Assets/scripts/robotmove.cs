@@ -55,11 +55,13 @@ public class robotmove : MonoBehaviour
             anim.SetBool("idle", true);
         }
 
-        
-        //else
-        //{
-            //Velocity.z=0;
-        //}
+        if(Velocity.y == 0)
+        {
+            if(Input.GetKey("space"))
+            {
+                Velocity.y = 3;
+            }
+        }
 
         rb.velocity = Velocity;
     }
