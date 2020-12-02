@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class shop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Rigidbody gun;
+    public Rigidbody shopfront;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKey("e"))
+        {
+            Instantiate(gun, shopfront.position, shopfront.rotation);
+        }
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class robotmove : MonoBehaviour
 {
-
+    public Transform handpoint;
+    public Rigidbody egg;
     private Rigidbody rb;
     private Animator anim;
 
@@ -13,6 +14,22 @@ public class robotmove : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+    }
+
+    public void throwegg()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            anim.SetBool("throw", true);
+            Rigidbody egginstance;
+             //Instantiate(handpoint.position, handpoint.rotation)as Rigidbody;
+            egginstance = Instantiate(egg, handpoint.position,handpoint.rotation) as Rigidbody;
+            egginstance.AddForce(handpoint.forward * 350f);
+        }
+        else
+        {
+            anim.SetBool("throw", false);
+        }
     }
 
     void Update()
@@ -64,5 +81,15 @@ public class robotmove : MonoBehaviour
         }
 
         rb.velocity = Velocity;
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            anim.SetBool("throw", true);
+        }
+        else
+        {
+            anim.SetBool("throw", false);
+        }
+
     }
 }
