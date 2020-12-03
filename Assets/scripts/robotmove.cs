@@ -18,18 +18,10 @@ public class robotmove : MonoBehaviour
 
     public void throwegg()
     {
-        if(Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("throw", true);
-            Rigidbody egginstance;
-             //Instantiate(handpoint.position, handpoint.rotation)as Rigidbody;
-            egginstance = Instantiate(egg, handpoint.position,handpoint.rotation) as Rigidbody;
-            egginstance.AddForce(handpoint.forward * 350f);
-        }
-        else
-        {
-            anim.SetBool("throw", false);
-        }
+        Rigidbody egginstance;
+        egginstance = Instantiate(egg, handpoint.position,handpoint.rotation) as Rigidbody;
+        egginstance.AddForce(handpoint.forward * 1000f);
+        
     }
 
     void Update()
@@ -69,7 +61,6 @@ public class robotmove : MonoBehaviour
             Velocity.x=0;
             Velocity.z=0;
             anim.SetBool("walk", false);
-            anim.SetBool("idle", true);
         }
 
         if(Velocity.y == 0)
@@ -84,7 +75,9 @@ public class robotmove : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
+            anim.SetBool("walk", false);
             anim.SetBool("throw", true);
+            anim.SetBool("idle", false);
         }
         else
         {
